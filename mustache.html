@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS Mustache</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			min-height: 100vh;
+			margin: 0;
+			display: grid;
+			place-items: center;
+			background: #f6d7b0;
+		}
+
+		.mustache {
+			position: relative;
+			width: 260px;
+			height: 100px;
+		}
+
+		.mustache::before,
+		.mustache::after {
+			content: "";
+			position: absolute;
+			top: 20px;
+			width: 135px;
+			height: 70px;
+			background: #211a18;
+			border-radius: 100% 0 100% 15%;
+		}
+
+		.mustache::before {
+			left: 0;
+			transform: rotate(200deg);
+		}
+
+		.mustache::after {
+			right: 0;
+			transform: scaleX(-1) rotate(200deg);
+		}
+
+		.mustache:hover::before,
+		.mustache:hover::after {
+			background: #49332b;
+		}
+	</style>
+</head>
+<body>
+	<div class="mustache" aria-label="A CSS mustache"></div>
+</body>
+</html>

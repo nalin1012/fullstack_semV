@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            border-width: 0px 0px 2px 0px;
+            border-color: #ccc;
+            display: block;
+            margin: 3%;
+            font-size: 20px;
+        }
+        input:required{
+            border-color: red;
+        }
+        input:optional{
+            border-color: green;
+        }
+        input:enabled{
+            background-color: transparent;
+            box-shadow: 0px 0px 5px #0b0a0a;
+        }
+        input:disabled{
+            background-color: #898888;
+            box-shadow: 0px 0px 5px #0b0a0a;
+        }
+        input:valid{
+            background-color: #00ff00;
+        }
+        input:invalid{
+            background-color: #ff0000;
+        }
+        input:out-of-range{
+            background-color: #f700ff;
+            box-shadow: 0px 0px 5px #f700ff;
+        }
+        input:in-range{
+            background-color: #11f0e8;
+            box-shadow: 0px 0px 5px #11f0e8;
+        }
+        input:placeholder-shown{
+            outline: 2px solid #000;
+        }
+        input:read-only{
+           border-width: 0px;
+           box-shadow: 0 0 0 transparent;
+           background-color: grey;
+           color: white;
+        }
+        input:focus{
+            box-shadow: 0 0 15px black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="first name" required/>
+    <input type="text" placeholder="middle name"/>
+    <input type="text" placeholder="last name" required/>
+    <input type="text" placeholder="mathura" disabled/>
+    <input type="email" placeholder="email" required/>
+    
+    <input type="number" placeholder="number"min="1" max="100"/>   
+    <input type="text" placeholder="Mrs." readonly/>   
+</body>
+</html>

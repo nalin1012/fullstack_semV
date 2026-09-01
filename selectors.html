@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: rgb(255, 0, 212);
+        }
+        #myid{
+            color: blue;
+        }   
+        .myclass{
+            color: green;
+        }
+        input[type="email"]{
+            border: 2px solid red;
+        }
+        ul>li.myclass>span{
+            background-color: rgb(255, 0, 212);
+        }
+        h2+p{
+            text-transform: uppercase;
+        }
+        h2~p{
+            color:aqua;
+        }
+        section h2{
+            color: blue;
+            text-shadow: 1px 1px 0 black;
+        }
+        section>h2{
+            text-transform:lowercase;
+        }
+
+        </style>
+</head>
+<body>
+
+    <section>
+        <h2>heading</h2>
+        <p>para 1</p>
+        <p> para 2</p>
+        <h2>heading</h2>
+    </section>
+    <h2> Selectors</h2>
+    <ul>
+        <li class="myclass">Universal Selector <span>123</span></li>
+        <li id="myid">ID Selector</li>
+        <li class="myclass">Class Selector</li>
+        <li id="myid">Attribute Selector</li>
+        <li>element name</li>
+        <li>combinators</li>
+        <li>pseudo-classes</li>
+        <li>pseudo-elements</li>
+    </ul>
+    <input  type="email" placeholder="Enter your name" />
+    <br/>
+    <input type="password" placeholder="Enter your password" />
+    
+</body>
+</html>
