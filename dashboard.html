@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    #sidebar {
+        flex-basis: 20%;
+        background-color: #333;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    #sidebar h2 {
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    #sidebar>ul {
+        list-style-type: none;
+    }
+
+    #sidebar>ul>li {
+        padding: 10px;
+        color: white;
+        font-size: 14px;
+    }
+
+    #main {
+        flex-basis: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #topnav {
+        background-color: white;
+        padding: 20px;
+        font-size: 18px;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #cards {
+        padding: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+        font-size: 16px;
+        color: white;
+        border: 1px solid #ddd;
+    }
+
+    #recent-orders {
+        padding: 20px;
+        background-color: white;
+        margin: 20px;
+        border: 1px solid #ddd;
+    }
+
+    #recent-orders h3 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .order-row {
+        display: flex;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+    }
+
+    .order-header {
+        display: flex;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .order-col {
+        flex: 1;
+        padding: 10px;
+        color: #333;
+        text-align: left;
+    }
+</style>
+</style>
+<body>
+    <div class ="container">
+        <div id="sidebar">
+            <h2 style="color: white;"> dashboard</h2>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Services</li>
+            </ul>
+        </div>
+        <div id="main">
+            <div id="topnav">
+                dashboard bar
+            </div>
+            <div id="cards">
+                <div class="card" style="background-color: red;">1</div>
+                <div class="card" style="background-color: blue;">2</div>
+                <div class="card" style="background-color: green;">3</div>
+            </div>
+            <div id="recent-orders">
+                <h3>Recent Orders</h3>
+                <div class="order-header">
+                    <div class="order-col">Order ID</div>
+                    <div class="order-col">Order Date</div>
+                    <div class="order-col">Name</div>
+                    <div class="order-col">Quantity</div>
+                </div>
+                <div class="order-row">
+                    <div class="order-col">ORD001</div>
+                    <div class="order-col">2024-01-15</div>
+                    <div class="order-col">John Smith</div>
+                    <div class="order-col">5</div>
+                </div>
+                <div class="order-row">
+                    <div class="order-col">ORD002</div>
+                    <div class="order-col">2024-01-14</div>
+                    <div class="order-col">Jane Doe</div>
+                    <div class="order-col">3</div>
+                </div>
+                <div class="order-row">
+                    <div class="order-col">ORD003</div>
+                    <div class="order-col">2024-01-13</div>
+                    <div class="order-col">Mike Johnson</div>
+                    <div class="order-col">7</div>
+                </div>
+                <div class="order-row">
+                    <div class="order-col">ORD004</div>
+                    <div class="order-col">2024-01-12</div>
+                    <div class="order-col">Sarah Williams</div>
+                    <div class="order-col">2</div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+
+
+    
+</body>
+</html>
