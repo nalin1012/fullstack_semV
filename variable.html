@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         :root{
+            --primary-color: black;
+            --secondary-color: yellow;
+            --textsize:30px;
+            --secondary-textsize: 20px;
+        }
+        div{
+            --primary-color: yellow;
+            --secondary-color: black;
+            font-size: var(--textsize);
+
+        }
+        p{
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            font-size: var(--secondary-textsize);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>helllo world</p>
+    </div>
+    <p>hello world</p>
+    
+</body>
+</html>
