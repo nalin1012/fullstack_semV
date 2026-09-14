@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Photo Scroll Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #121214;
+            color: #ffffff;
+        }
+
+        .welcome-screen {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .welcome-screen::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .welcome-screen h1,
+        .welcome-screen p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-screen h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-screen p {
+            color: #a1a1aa;
+            font-size: 1.2rem;
+        }
+
+        .welcome-screen img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .gallery-wrapper {
+            width: 100%;
+            padding: 5vh 3vw 10vh;
+        }
+
+        .photo-box {
+            position: sticky;
+            top: 3vh;
+            width: 100%;
+            height: 75vh;
+            margin-bottom: 4vh;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+            background: #27272a;
+        }
+
+        .photo-box:nth-child(even),
+        .photo-box:nth-child(odd) {
+            transform: none;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 1rem;
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+        }
+
+        .character-card {
+            display: flex;
+            align-items: center;
+            gap: 5vw;
+            min-height: 70vh;
+            margin-bottom: 4vh;
+            padding: 3%;
+            border-radius: 24px;
+            background: #1d1d21;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .character-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .character-card img {
+            width: 55%;
+            height: 60vh;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .character-details {
+            flex: 1;
+        }
+
+        .character-details h2 {
+            margin-bottom: 18px;
+            font-size: 2.4rem;
+            color: #e63946;
+        }
+
+        .character-details p {
+            color: #c4c4cc;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 700px) {
+            .character-card,
+            .character-card:nth-child(even) {
+                flex-direction: column;
+                gap: 25px;
+                padding: 20px;
+            }
+
+            .character-card img {
+                width: 100%;
+                height: 45vh;
+            }
+
+            .character-details h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-screen">
+        <h1>AKATUSKI MEMBERS</h1>
+        <img src="https://i.pinimg.com/736x/be/23/16/be23168199ba1e4506dfdacfc61901d1.jpg" alt="Welcome Image">
+        <p></p>
+    </div>
+
+    <div class="gallery-wrapper">
+    <div class="character-card">
+        <img src="https://i.pinimg.com/736x/27/c0/8e/27c08e31cda4919d8148360935b645bb.jpg" alt="Itachi Uchiha">
+        <div class="character-details">
+            <h2>Itachi Uchiha</h2>
+            <p>Itachi was a talented shinobi and a member of the Akatsuki. He was known for his intelligence, powerful Sharingan, and calm personality.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/736x/9f/d5/54/9fd554dde095de96a59740199a6ccc36.jpg" alt="Pain">
+        <div class="character-details">
+            <h2>Pain</h2>
+            <p>Pain was the leader of the Akatsuki. He wanted to create peace through fear and the power of the Rinnegan.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/736x/47/27/88/4727887eabb52ba71e53a100134b58fb.jpg" alt="Deidara">
+        <div class="character-details">
+            <h2>Deidara</h2>
+            <p>Deidara was an explosive artist who believed that true art should disappear in a beautiful explosion.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/1200x/b7/27/8a/b7278a9fc563d1536e8602e39028c5ab.jpg" alt="Kisame Hoshigaki">
+        <div class="character-details">
+            <h2>Kisame Hoshigaki</h2>
+            <p>Kisame was a powerful swordsman who fought alongside Itachi. His sword, Samehada, absorbed chakra from enemies.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/1200x/44/42/35/4442356b955820db2c1feed41ef66cef.jpg" alt="Sasori">
+        <div class="character-details">
+            <h2>Sasori</h2>
+            <p>Sasori was a skilled puppet master who turned human bodies into powerful puppets.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/736x/59/e2/c8/59e2c856e1405e2acd5df27c11f056ec.jpg" alt="Konan">
+        <div class="character-details">
+            <h2>Konan</h2>
+            <p>Konan was one of the founders of the Akatsuki and a skilled user of paper-based techniques. She was loyal to Yahiko and Nagato.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/1200x/be/f7/3d/bef73dd57d3c1b359001b9bb1638b7df.jpg" alt="Zetsu">
+        <div class="character-details">
+            <h2>Zetsu</h2>
+            <p>Zetsu served as a spy for the Akatsuki. He had two distinct personalities and was skilled at gathering information.</p>
+        </div>
+    </div>
+
+    <div class="character-card">
+        <img src="https://i.pinimg.com/1200x/1b/1e/40/1b1e40a011018668b3d5d53399176a6e.jpg" alt="Tobi">
+        <div class="character-details">
+            <h2>Tobi / Obito Uchiha</h2>
+            <p>Obito operated under the identity of Tobi. He possessed the Sharingan and played an important role in the Akatsuki's plans.</p>
+        </div>
+    </div>
+</div>
+        
+</body>
+</html>
