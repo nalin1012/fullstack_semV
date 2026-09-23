@@ -23,8 +23,11 @@
 
     #sidebar {
       width: 240px;
+      min-height: 100vh;
       padding: 20px;
       background: #0F172A;
+      display: flex;
+      flex-direction: column;
     }
 
     #sidebar h2 {
@@ -48,10 +51,35 @@
       text-decoration: none;
     }
 
-    #sidebar a.active,
     #sidebar a:hover {
       background: #4F46E5;
       color: #FFFFFF;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      color: #FFFFFF;
+    }
+
+    .profile-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #D97706;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+
+    .profile p {
+      margin: 0;
+      color: #CBD5E1;
+      font-size: 12px;
     }
 
     #main-content {
@@ -60,12 +88,24 @@
     }
 
     #main-content header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 24px;
     }
 
     #main-content header p,
     .card p {
       color: #64748B;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      box-shadow: 0 2px 6px #CBD5E1;
+      margin-bottom: 24px;
     }
 
     .content-cards {
@@ -79,6 +119,11 @@
       border: 1px solid #E2E8F0;
       background: #FFFFFF;
       border-radius: 12%;
+      box-shadow: 0 2px 6px #CBD5E1;
+    }
+
+    .card:hover {
+      box-shadow: 0 5px 12px #94A3B8;
     }
 
     .card h2 {
@@ -113,19 +158,8 @@
       color: #4F46E5;
     }
 
-    .chart {
-      height: 180px;
-    }
-
-    .line {
-      width: 100%;
-      height: 100%;
-    }
-
-    .line polyline {
-      fill: none;
-      stroke: #4F46E5;
-      stroke-width: 3;
+    .left-side > .card:first-child {
+      height: 220px;
     }
 
     .bars {
@@ -191,6 +225,10 @@
         padding: 24px 16px;
       }
 
+      #main-content header {
+        display: block;
+      }
+
       .content-cards {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -220,23 +258,32 @@
   <div id="dashboard-container">
     <!-- Sidebar -->
     <aside id="sidebar">
-      <h2>Dashboard</h2>
+      <h2>AdminPro</h2>
       <nav>
         <ul>
           <li><a href="#" class="active">Overview</a></li>
           <li><a href="#">Analytics</a></li>
           <li><a href="#">Users</a></li>
+          <li><a href="#">Orders</a></li>
+          <li><a href="#">Products</a></li>
           <li><a href="#">Settings</a></li>
         </ul>
       </nav>
+      <div class="profile">
+        <div class="profile-photo">NJ</div>
+        <div>
+          <strong>Nalin Johari</strong>
+          <p>Admin</p>
+        </div>
+      </div>
     </aside>
 
     <!-- Main Content Area -->
     <main id="main-content">
+      <input class="search-box" type="search" placeholder="Search...">
       <header>
         <div>
           <h1>Dashboard</h1>
-          <p>Welcome back. Here is your store overview.</p>
         </div>
       </header>
       <section class="content-cards">
@@ -265,11 +312,6 @@
         <div class="left-side">
           <article class="card">
             <div class="card-title"><h3>Revenue Overview</h3><span>₹1,24,532</span></div>
-            <div class="chart">
-              <svg class="line" viewBox="0 0 500 180" preserveAspectRatio="none" aria-label="Revenue chart">
-                <polyline points="0,145 70,150 140,105 210,125 280,80 350,95 420,52 500,20"></polyline>
-              </svg>
-            </div>
           </article>
           <article class="card">
             <div class="card-title"><h3>Traffic Overview</h3><span class="change">↑ 10%</span></div>
