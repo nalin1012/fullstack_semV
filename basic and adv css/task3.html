@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> admin Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #F1F5F9;
+      color: #0F172A;
+      font-family: Arial, sans-serif;
+    }
+
+    #dashboard-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    #sidebar {
+      width: 240px;
+      padding: 20px;
+      background: #0F172A;
+    }
+
+    #sidebar h2 {
+      color: #FFFFFF;
+    }
+
+    #sidebar ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    #sidebar li {
+      margin: 8px 0;
+    }
+
+    #sidebar a {
+
+      display: block;
+      padding: 10px;
+      color: #CBD5E1;
+      text-decoration: none;
+    }
+
+    #sidebar a.active,
+    #sidebar a:hover {
+      background: #4F46E5;
+      color: #FFFFFF;
+    }
+
+    #main-content {
+      flex: 1;
+      padding: 32px;
+    }
+
+    #main-content header {
+      margin-bottom: 24px;
+    }
+
+    #main-content header p,
+    .card p {
+      color: #64748B;
+    }
+
+    .content-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 20px;
+      border: 1px solid #E2E8F0;
+      background: #FFFFFF;
+      border-radius: 12%;
+    }
+
+    .card h2 {
+      font-size: 28px;
+    }
+
+    .card .change,
+    .delivered {
+      color: #16A34A;
+    }
+
+    .analytics {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .left-side,
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .card-title span {
+      color: #4F46E5;
+    }
+
+    .chart {
+      height: 180px;
+    }
+
+    .line {
+      width: 100%;
+      height: 100%;
+    }
+
+    .line polyline {
+      fill: none;
+      stroke: #4F46E5;
+      stroke-width: 3;
+    }
+
+    .bars {
+      display: flex;
+      align-items: end;
+      justify-content: space-around;
+      height: 140px;
+    }
+
+    .bar {
+      width: 20px;
+      background: #4F46E5;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    .processing {
+      color: #D97706;
+    }
+
+    .cancelled {
+      color: #DC2626;
+    }
+
+    @media (max-width: 900px) {
+      .content-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .analytics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #dashboard-container {
+        display: block;
+      }
+
+      #sidebar {
+        padding: 16px;
+      }
+
+      #sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      #sidebar li {
+        margin: 0;
+      }
+
+      #main-content {
+        padding: 24px 16px;
+      }
+
+      .content-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .analytics {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 16px;
+      }
+
+      .left-side,
+      .right-side {
+        gap: 16px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
+
+  </style>
+  
+</head>
+<body>
+
+  <div id="dashboard-container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <h2>Dashboard</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Overview</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <header>
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome back. Here is your store overview.</p>
+        </div>
+      </header>
+      <section class="content-cards">
+        <article class="card">
+          <p>Total Revenue</p>
+          <h2>₹1,24,532</h2>
+          <p class="change">↑ 12% from last month</p>
+        </article>
+        <article class="card">
+          <p>Total Orders</p>
+          <h2>892</h2>
+          <p class="change">↑ 8% from last month</p>
+        </article>
+        <article class="card">
+          <p>Active Users</p>
+          <h2>3,521</h2>
+          <p class="change">↑ 14% from last month</p>
+        </article>
+        <article class="card">
+          <p>Conversion Rate</p>
+          <h2>4.2%</h2>
+          <p class="change">↑ 2% from last month</p>
+        </article>
+      </section>
+      <section class="analytics">
+        <div class="left-side">
+          <article class="card">
+            <div class="card-title"><h3>Revenue Overview</h3><span>₹1,24,532</span></div>
+            <div class="chart">
+              <svg class="line" viewBox="0 0 500 180" preserveAspectRatio="none" aria-label="Revenue chart">
+                <polyline points="0,145 70,150 140,105 210,125 280,80 350,95 420,52 500,20"></polyline>
+              </svg>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-title"><h3>Traffic Overview</h3><span class="change">↑ 10%</span></div>
+            <p>8,432 Total Visitors</p>
+            <div class="bars">
+              <span class="bar" style="height: 35%"></span><span class="bar" style="height: 50%"></span>
+              <span class="bar" style="height: 42%"></span><span class="bar" style="height: 65%"></span>
+              <span class="bar" style="height: 55%"></span><span class="bar" style="height: 78%"></span>
+              <span class="bar" style="height: 95%"></span>
+            </div>
+          </article>
+        </div>
+        <div class="right-side">
+          <article class="card">
+            <div class="card-title"><h3>Recent Orders</h3><span>View all</span></div>
+            <div class="table-wrap"><table>
+              <tr><th>Customer</th><th>Amount</th><th>Status</th></tr>
+              <tr><td>Rahul Sharma</td><td>₹2,499</td><td class="delivered">Delivered</td></tr>
+              <tr><td>Priya Singh</td><td>₹4,999</td><td class="processing">Processing</td></tr>
+              <tr><td>Amit Kumar</td><td>₹1,299</td><td class="delivered">Shipped</td></tr>
+              <tr><td>Neha Gupta</td><td>₹3,799</td><td class="delivered">Delivered</td></tr>
+            </table></div>
+          </article>
+          <article class="card">
+            <div class="card-title"><h3>Top Products</h3><span>View all</span></div>
+            <div class="table-wrap"><table>
+              <tr><th>Product</th><th>Sales</th><th>Change</th></tr>
+              <tr><td>Laptop Pro</td><td>2,450</td><td class="delivered">+12%</td></tr>
+              <tr><td>Wireless Earbuds</td><td>1,892</td><td class="delivered">+8%</td></tr>
+              <tr><td>Smart Watch</td><td>1,203</td><td class="delivered">+6%</td></tr>
+            </table></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
